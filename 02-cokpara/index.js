@@ -59,7 +59,7 @@ productsBox.addEventListener('click', (e) => {
   if (e.target.className === "p-button") {
     const basket = document.querySelector(`.class${e.target.id}`);
     
-    const clickedProduct = productList.filter(el => el.id == e.target.id);
+    const clickedProduct = productList.filter(product => product.id == e.target.id);
     return (
       basket.innerHTML = `${clickedProduct[0].count++} adet eklendi`
     );
