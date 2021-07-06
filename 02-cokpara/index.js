@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
   productList.map(product => productsBox.innerHTML += `
     <div id="product">
         <img src="${product.img}" alt="product-${product.id}" class="product-img">
-        <button id="${product.id}" class="p-button" onclick="addToBasket()">Sepete Ekle</button>
+        <button id="${product.id}" class="p-button">Sepete Ekle</button>
         <h4>${product.name}</h4>
         <span>Fiyatı: ${product.price} $</span>
-        <span class="basket"></span>
+        <span class="class${product.id}">${counter}</span>
     </div>
   `);
 });
@@ -39,10 +39,7 @@ productsBox.addEventListener('click', (e) => {
     canBuy.innerHTML= "Bu üründen daha fazla satın alamazsın!"
     e.target.disabled = true;
     e.target.className= "disabled-button"
-  }
-
-  // !!! Product Counter func !!!
-  // addToBasket();
+  };
 });
 
 
@@ -58,11 +55,14 @@ productsBox.addEventListener('mouseover', (e) => {
 
 });
 
-// !!! Product Counter - Sepet Function // Çalışmıyor !!!
-var counter = 0;
-const basket = document.querySelector('.basket');
-basket.innerHTML = counter;
-// Product Counter
-function addToBasket() {
-  this.className == "p-button" ? counter += 1 : counter -= 1; 
-};
+// Product Counter - Sepet Function  
+let counter = 0;
+
+productsBox.addEventListener('click', (e) => {
+  if (e.target.className === "p-button") {
+    const basket = document.querySelector(`.class${e.target.id}`);
+    
+    counter ++;
+    basket.innerHTML = counter;
+  };
+});
