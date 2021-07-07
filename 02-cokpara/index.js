@@ -16,7 +16,7 @@ let billGatesMoney = Number.MAX_SAFE_INTEGER;
 
 document.addEventListener('DOMContentLoaded', () => {
   productList.map(product => productsBox.innerHTML += `
-    <div id="product">
+    <div class="product">
         <img src="${product.img}" alt="product-${product.id}" class="product-img">
         <button id="${product.id}" class="p-button">Sepete Ekle</button>
         <h4>${product.name}</h4>
@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="class${product.id} basket"></span>
     </div>
   `);
+  moneyBox.innerHTML = `Toplam para: ${billGatesMoney}`;
 });
 
 // Kalan Para
