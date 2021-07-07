@@ -5,6 +5,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background-color: khaki;
+}
+
 h1 {
   color: darkred;
   background-color: lightgoldenrodyellow;
@@ -41,7 +45,7 @@ h4 {
   flex-wrap: wrap;
 }
 
-#product {
+.product {
   border: 2px solid black;
   background-color: burlywood;
   text-align: center;
